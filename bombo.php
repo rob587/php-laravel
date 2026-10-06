@@ -93,3 +93,23 @@ foreach ($voti as $chiave => $valore){
 
     echo "{$chiave}:  {$valore}\n";
 }
+
+$somma = 0;
+
+foreach($voti as $materia => $voto) {
+    $somma += $voto; 
+}
+
+$media = $somma / count($voti); // dividi per il numero di elementi
+
+echo $media;
+
+$media = 3.4;
+
+$giudizio = match(true){
+    $media >= 8 => "Promosso con lode",
+    $media >= 6 => "Promosso",
+    default     => "Rimandato"
+};
+
+echo $giudizio;
