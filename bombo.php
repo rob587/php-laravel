@@ -80,36 +80,58 @@
 // Dopo il foreach, calcola la media dei voti con un secondo loop e stampala
 // Usa match per stampare un giudizio finale sulla media: >= 8 = "Promosso con lode", >= 6 = "Promosso", sotto = "Rimandato"
 
-$voti = ["matematica" => 4, "italiano" => 3, "informatica" => 7, "storia" => 2, "pipo" => 1 ];
+// $voti = ["matematica" => 4, "italiano" => 3, "informatica" => 7, "storia" => 2, "pipo" => 1 ];
 
-foreach ($voti as $chiave => $valore){
-    if ($valore >= 8){
-        echo 'ottimo'. ' ';
-    }elseif ($valore >= 6){
-        echo 'sufficiente' . ' ';
-    }else {
-        echo 'insufficiente' . ' ' ;
-    }
+// foreach ($voti as $chiave => $valore){
+//     if ($valore >= 8){
+//         echo 'ottimo'. ' ';
+//     }elseif ($valore >= 6){
+//         echo 'sufficiente' . ' ';
+//     }else {
+//         echo 'insufficiente' . ' ' ;
+//     }
 
-    echo "{$chiave}:  {$valore}\n";
+//     echo "{$chiave}:  {$valore}\n";
+// }
+
+// $somma = 0;
+
+// foreach($voti as $materia => $voto) {
+//     $somma += $voto; 
+// }
+
+// $media = $somma / count($voti); // dividi per il numero di elementi
+
+// echo $media;
+
+// $media = 3.4;
+
+// $giudizio = match(true){
+//     $media >= 8 => "Promosso con lode",
+//     $media >= 6 => "Promosso",
+//     default     => "Rimandato"
+// };
+
+// echo $giudizio;
+
+// function saluta($nome){
+//     return "ciao {$nome}!";
+// }
+
+echo saluta ('roberto');
+
+function somma(int $a, int $b): int{
+    return $a + $b;
 }
 
-$somma = 0;
-
-foreach($voti as $materia => $voto) {
-    $somma += $voto; 
+function saluta(string $nome): string {
+    return "Ciao {$nome}!";
 }
 
-$media = $somma / count($voti); // dividi per il numero di elementi
+$text = 'ciao';
 
-echo $media;
+function stampa(string $testo){
+    echo $testo;
+}
 
-$media = 3.4;
-
-$giudizio = match(true){
-    $media >= 8 => "Promosso con lode",
-    $media >= 6 => "Promosso",
-    default     => "Rimandato"
-};
-
-echo $giudizio;
+stampa($text);
