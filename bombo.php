@@ -204,56 +204,79 @@
 //     echo $utente->presentati();
 //     echo $utente->getEta();
 
-class Animale {
-    public string $nome;
+// class Animale {
+//     public string $nome;
 
-    public function __construct(string $nome) {
-        $this->nome = $nome;
-    }
+//     public function __construct(string $nome) {
+//         $this->nome = $nome;
+//     }
 
-     public function descrivi(): string {
-        return "Sono un animale e mi chiamo {$this->nome}";
-    }
-}
+//      public function descrivi(): string {
+//         return "Sono un animale e mi chiamo {$this->nome}";
+//     }
+// }
 
-class Cane extends Animale {
-    public string $razza;
+// class Cane extends Animale {
+//     public string $razza;
 
-    public function __construct(string $nome, string $razza) {
-        parent::__construct($nome);
-        $this->razza = $razza;
-    }
+//     public function __construct(string $nome, string $razza) {
+//         parent::__construct($nome);
+//         $this->razza = $razza;
+//     }
 
 
 
-     public function descrivi(): string {
-        return "Sono un cane di razza {$this->razza} e mi chiamo {$this->nome}";
-    }
+//      public function descrivi(): string {
+//         return "Sono un cane di razza {$this->razza} e mi chiamo {$this->nome}";
+//     }
 
     
-    public function abbaia(): string {
-        return "Woof!";
-    }
-}
+//     public function abbaia(): string {
+//         return "Woof!";
+//     }
+// }
 
-$cane = new Cane("Rex", "Labrador");
-echo $cane->descrivi(); 
-echo $cane->abbaia();
+// $cane = new Cane("Rex", "Labrador");
+// echo $cane->descrivi(); 
+// echo $cane->abbaia();
 
 
 
-class Contatore {
-    private static int $totale = 0;
+// class Contatore {
+//     private static int $totale = 0;
 
-    public static function incrementa(): void {
-        self::$totale++;
-    }
+//     public static function incrementa(): void {
+//         self::$totale++;
+//     }
 
-    public static function getTotale(): int {
-        return self::$totale;
-    }
-}
+//     public static function getTotale(): int {
+//         return self::$totale;
+//     }
+// }
 
-Contatore::incrementa();
-Contatore::incrementa();
-echo Contatore::getTotale();
+// Contatore::incrementa();
+// Contatore::incrementa();
+// echo Contatore::getTotale();
+
+
+// interface Pagabile {
+//     public function calcolaTotale(): float;
+//     public function applicaSconto(int $percentuale): float;
+// }
+
+// class Ordine implements Pagabile {
+//     public function __construct(private float $importo) {}
+
+//     public function calcolaTotale(): float {
+//         return $this->importo;
+//     }
+
+//     public function applicaSconto(int $percentuale): float {
+//         return $this->importo - ($this->importo * $percentuale / 100);
+//     }
+// }
+
+// Crea una classe Prodotto con proprietà nome, prezzo (private), costruttore e un metodo getPrezzo(): float
+// Crea una classe ProdottoScontato che estende Prodotto, aggiunge una proprietà sconto (percentuale intera) e fa override di getPrezzo() restituendo il prezzo già scontato
+// Crea una classe Carrello con una proprietà $prodotti (array, inizialmente vuoto), un metodo aggiungi(Prodotto $prodotto): void che aggiunge un prodotto all'array, e un metodo totale(): float che somma tutti i getPrezzo() dei prodotti
+// Istanzia almeno 2 Prodotto normali e 2 ProdottoScontato, aggiungili al carrello e stampa il totale
