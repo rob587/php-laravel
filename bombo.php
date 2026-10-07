@@ -142,3 +142,11 @@ $prodotti = [
     ["nome" => "Monitor",  "prezzo" => 299.99, "quantita" => 1],
     ["nome" => "Cuffie",   "prezzo" => 49.99, "quantita" => 3],
 ];
+
+$totaleCarrello = 0;
+
+foreach($prodotti as $prodotto){
+    $subtotale = calcolaPrezzo($prodotto['prezzo'], $prodotto['quantita']);
+    echo "prodotto {$prodotto['nome']}: €{$subtotale}\n";
+    $totaleCarrello += $subtotale;
+}
