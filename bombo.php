@@ -128,29 +128,54 @@
 // Applica uno sconto del 15% con applicaSconto e stampa il totale finale
 
 
-function calcolaPrezzo(float $prezzo, int $quantita): float {
-    return $prezzo * $quantita;
+// function calcolaPrezzo(float $prezzo, int $quantita): float {
+//     return $prezzo * $quantita;
+// }
+
+// function applicaSconto(float $totale, int $percentuale = 10): float{
+//     return $totale - ($totale * $percentuale / 100);
+// }
+
+// $prodotti = [
+//     ["nome" => "Tastiera", "prezzo" => 79.99, "quantita" => 1],
+//     ["nome" => "Mouse",    "prezzo" => 29.99, "quantita" => 2],
+//     ["nome" => "Monitor",  "prezzo" => 299.99, "quantita" => 1],
+//     ["nome" => "Cuffie",   "prezzo" => 49.99, "quantita" => 3],
+// ];
+
+// $totaleCarrello = 0;
+
+// foreach($prodotti as $prodotto){
+//     $subtotale = calcolaPrezzo($prodotto['prezzo'], $prodotto['quantita']);
+//     echo "prodotto {$prodotto['nome']}: €{$subtotale}\n";
+//     $totaleCarrello += $subtotale;
+// }
+
+// $totaleScontato = applicaSconto($totaleCarrello, 15);
+// echo "Totale: €{$totaleCarrello}\n";
+// echo "Totale con sconto 15%: €{$totaleScontato}\n";
+
+// Crea un file studenti.php:
+
+// Dichiara un array $studenti con almeno 5 nomi in minuscolo e disordinati, tipo ["mario", "anna", "luigi", "sara", "giorgio"]
+// Usa sort() per ordinarli alfabeticamente e stampali tutti con un foreach
+// Chiedi "quanti studenti ci sono?" e stampalo con count()
+// Aggiungi un nuovo studente "zara" in fondo e uno "alberto" in testa, poi stampa il nuovo array
+// Crea una stringa $lista unendo tutti i nomi con | come separatore usando implode
+// Stampa $lista con tutti i nomi in formato ucfirst — ogni nome deve avere la prima lettera maiuscola
+
+$studenti = ["mario", "anna", "luigi", "sara", "giorgio"];
+
+array_push($studenti, "zara");
+array_unshift($studenti, "alberto");
+sort($studenti);
+
+foreach($studenti as $studente){
+    echo "{$studente}\n" ;
 }
 
-function applicaSconto(float $totale, int $percentuale = 10): float{
-    return $totale - ($totale * $percentuale / 100);
-}
+echo "Quanti studenti ci sono? " . count($studenti) . "\n";
 
-$prodotti = [
-    ["nome" => "Tastiera", "prezzo" => 79.99, "quantita" => 1],
-    ["nome" => "Mouse",    "prezzo" => 29.99, "quantita" => 2],
-    ["nome" => "Monitor",  "prezzo" => 299.99, "quantita" => 1],
-    ["nome" => "Cuffie",   "prezzo" => 49.99, "quantita" => 3],
-];
+$lista = implode(" | ", array_map(fn($nome) => ucfirst($nome), $studenti));
 
-$totaleCarrello = 0;
-
-foreach($prodotti as $prodotto){
-    $subtotale = calcolaPrezzo($prodotto['prezzo'], $prodotto['quantita']);
-    echo "prodotto {$prodotto['nome']}: €{$subtotale}\n";
-    $totaleCarrello += $subtotale;
-}
-
-$totaleScontato = applicaSconto($totaleCarrello, 15);
-echo "Totale: €{$totaleCarrello}\n";
-echo "Totale con sconto 15%: €{$totaleScontato}\n";
+echo $lista;
