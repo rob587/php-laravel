@@ -118,20 +118,27 @@
 //     return "ciao {$nome}!";
 // }
 
-echo saluta ('roberto');
 
-function somma(int $a, int $b): int{
-    return $a + $b;
+
+// Crea una funzione calcolaPrezzo(float $prezzo, int $quantita): float che ritorna il totale
+// Crea una funzione applicaSconto(float $totale, int $percentuale = 10): float che applica uno sconto al totale
+// Dichiara un array $prodotti con almeno 4 prodotti, ognuno con nome, prezzo e quantita
+// Con un foreach itera i prodotti, chiama calcolaPrezzo per ognuno e stampa "Prodotto X: €Y"
+// Calcola il totale del carrello sommando tutti i prezzi calcolati
+// Applica uno sconto del 15% con applicaSconto e stampa il totale finale
+
+
+function calcolaPrezzo(float $prezzo, int $quantita): float {
+    return $prezzo * $quantita;
 }
 
-function saluta(string $nome): string {
-    return "Ciao {$nome}!";
+function applicaSconto(float $totale, int $percentuale = 10): float{
+    return $totale - ($totale * $percentuale / 100);
 }
 
-$text = 'ciao';
-
-function stampa(string $testo){
-    echo $testo;
-}
-
-stampa($text);
+$prodotti = [
+    ["nome" => "Tastiera", "prezzo" => 79.99, "quantita" => 1],
+    ["nome" => "Mouse",    "prezzo" => 29.99, "quantita" => 2],
+    ["nome" => "Monitor",  "prezzo" => 299.99, "quantita" => 1],
+    ["nome" => "Cuffie",   "prezzo" => 49.99, "quantita" => 3],
+];
