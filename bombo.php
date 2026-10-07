@@ -150,3 +150,7 @@ foreach($prodotti as $prodotto){
     echo "prodotto {$prodotto['nome']}: €{$subtotale}\n";
     $totaleCarrello += $subtotale;
 }
+
+$totaleScontato = applicaSconto($totaleCarrello, 15);
+echo "Totale: €{$totaleCarrello}\n";
+echo "Totale con sconto 15%: €{$totaleScontato}\n";
