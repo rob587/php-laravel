@@ -164,18 +164,96 @@
 // Crea una stringa $lista unendo tutti i nomi con | come separatore usando implode
 // Stampa $lista con tutti i nomi in formato ucfirst — ogni nome deve avere la prima lettera maiuscola
 
-$studenti = ["mario", "anna", "luigi", "sara", "giorgio"];
+// $studenti = ["mario", "anna", "luigi", "sara", "giorgio"];
 
-array_push($studenti, "zara");
-array_unshift($studenti, "alberto");
-sort($studenti);
+// array_push($studenti, "zara");
+// array_unshift($studenti, "alberto");
+// sort($studenti);
 
-foreach($studenti as $studente){
-    echo "{$studente}\n" ;
+// foreach($studenti as $studente){
+//     echo "{$studente}\n" ;
+// }
+
+// echo "Quanti studenti ci sono? " . count($studenti) . "\n";
+
+// $lista = implode(" | ", array_map(fn($nome) => ucfirst($nome), $studenti));
+
+// echo $lista;
+
+// class Utente {
+//     public string $nome;
+//     public string $email;
+//     public int $eta;
+
+//     public function __construct(string $nome, string $email, int $eta) {
+//         $this ->nome = $nome;
+//         $this ->email = $email;
+//         $this ->eta = $eta;
+//     }
+
+//     public function presentati(): string {
+//         return "Ciao, sono {$this->nome} ({$this->email})";
+//     }
+
+//     public function getEta(): int {
+//         return $this->eta;
+//     }
+//     }
+
+//     $utente = new Utente("Roberto, rob@gmail.com", 24);
+//     echo $utente->presentati();
+//     echo $utente->getEta();
+
+class Animale {
+    public string $nome;
+
+    public function __construct(string $nome) {
+        $this->nome = $nome;
+    }
+
+     public function descrivi(): string {
+        return "Sono un animale e mi chiamo {$this->nome}";
+    }
 }
 
-echo "Quanti studenti ci sono? " . count($studenti) . "\n";
+class Cane extends Animale {
+    public string $razza;
 
-$lista = implode(" | ", array_map(fn($nome) => ucfirst($nome), $studenti));
+    public function __construct(string $nome, string $razza) {
+        parent::__construct($nome);
+        $this->razza = $razza;
+    }
 
-echo $lista;
+
+
+     public function descrivi(): string {
+        return "Sono un cane di razza {$this->razza} e mi chiamo {$this->nome}";
+    }
+
+    
+    public function abbaia(): string {
+        return "Woof!";
+    }
+}
+
+$cane = new Cane("Rex", "Labrador");
+echo $cane->descrivi(); 
+echo $cane->abbaia();
+
+
+
+class Contatore {
+    private static int $totale = 0;
+
+    public static function incrementa(): void {
+        self::$totale++;
+    }
+
+    public static function getTotale(): int {
+        return self::$totale;
+    }
+}
+
+Contatore::incrementa();
+Contatore::incrementa();
+echo Contatore::getTotale();
