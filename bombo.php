@@ -308,3 +308,19 @@ class ProdottoScontato extends Prodotto {
         return $prezzo - ($prezzo * $this->sconto / 100);
     }
 }
+
+class Carrello {
+    private array $prodotti = [];
+
+    public function aggiungi(Prodotto $prodotto): void {
+        $this->prodotti[] = $prodotto;
+    }
+
+    public function totale(): float {
+        $totale = 0;
+        foreach ($this ->prodotti as $prodotto){
+            $totale += $prodotto->getPrezzo();
+        }
+        return $totale;
+    }
+}
