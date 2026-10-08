@@ -324,3 +324,16 @@ class Carrello {
         return $totale;
     }
 }
+
+$p1 = new Prodotto("Tastiera", 79.99);
+$p2 = new Prodotto("Mouse", 29.99);
+$p3 = new ProdottoScontato("Monitor", 299.99, 20); 
+$p4 = new ProdottoScontato("Cuffie", 49.99, 10);
+
+$carrello = new Carrello();
+$carrello->aggiungi($p1);
+$carrello->aggiungi($p2);
+$carrello->aggiungi($p3);
+$carrello->aggiungi($p4);
+
+echo "Totale: €" . $carrello->totale();
