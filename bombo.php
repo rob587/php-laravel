@@ -280,3 +280,18 @@
 // Crea una classe ProdottoScontato che estende Prodotto, aggiunge una proprietà sconto (percentuale intera) e fa override di getPrezzo() restituendo il prezzo già scontato
 // Crea una classe Carrello con una proprietà $prodotti (array, inizialmente vuoto), un metodo aggiungi(Prodotto $prodotto): void che aggiunge un prodotto all'array, e un metodo totale(): float che somma tutti i getPrezzo() dei prodotti
 // Istanzia almeno 2 Prodotto normali e 2 ProdottoScontato, aggiungili al carrello e stampa il totale
+
+class Prodotto {
+    public string $nome;
+    private float $prezzo;
+
+    public function __construct(string $nome, float $prezzo){
+        $this->nome = $nome;
+        $this->prezzo = $prezzo;
+    }
+
+    public function getPrezzo(): float{
+        
+    }
+}
+
