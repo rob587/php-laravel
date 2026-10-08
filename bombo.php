@@ -291,7 +291,20 @@ class Prodotto {
     }
 
     public function getPrezzo(): float{
-        
+        return $this->prezzo;
     }
 }
 
+class ProdottoScontato extends Prodotto {
+    public float $sconto;
+
+    public function __construct(string $nome, float $prezzo, float $sconto) {
+        parent::__construct($nome,$prezzo);
+        $this->sconto = $sconto;
+    }
+
+       public function getPrezzo(): float {
+        $prezzo = parent::getPrezzo(); 
+        return $prezzo - ($prezzo * $this->sconto / 100);
+    }
+}
